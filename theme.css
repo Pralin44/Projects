@@ -1,0 +1,46 @@
+
+        /* Dark theme */
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #f0f0f0;
+        }
+
+        /* Container for pet details */
+        .pet-details {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Style for the pet image */
+        .pet-details img {
+            max-width: 2in;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+
+        /* Style for paragraphs */
+        p {
+            margin: 10px 0;
+        }
+
+        /* Style for links */
+        a {
+            color: #0099cc;
+            text-decoration: none;
+        }
+
+        /* Style for links on hover */
+        a:hover {
+            text-decoration: underline;
+        }

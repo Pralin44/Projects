@@ -1,0 +1,202 @@
+<?php
+header('Content-Type: text/html; charset=utf-8');
+require('connection.inc.php');
+require('functions.php');
+$name='';
+$mem='';
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You have to log in first";
+    header('location: login.php');
+}
+  
+?>
+
+<?php if (isset($_SESSION['success'])) : ?>
+            <div class="error success" >
+                <h3>
+                    <?php
+                        echo $_SESSION['success'];
+                        unset($_SESSION['success']);
+                    ?>
+                </h3>
+            </div>
+        <?php endif ?>
+        
+<?php if (isset($_SESSION['username'])){
+        $username=$_SESSION['username']; 
+  
+    }?>
+
+<!DOCTYPE hmtl>
+<html>
+    <head><title>Paw Print Academy</title></head>
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+    rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/2866db5307.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body{
+        background-color:#222;
+        color:white;
+        text-align:justify;
+    }
+    .sub-menus {
+        display: none;
+        position: absolute;
+        top:80%;
+        right: 2rem;
+        left:2rem;
+        background-color: #f2f2f2;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+    .sub-menus a {
+        color: black;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .sub-menus a:hover {
+        background-color: #ddd;
+    }
+    /* Slideshow container */
+.slideshow-container {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slides */
+.slide {
+    display: none;
+}
+
+.slide img {
+    width: 100%;
+    height: 32rem;
+}
+
+/* CSS for fading animation (optional) */
+.fade {
+    animation: fade 3s ease-in-out infinite;
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 0; }
+    25%, 75% { opacity: 1; }
+}
+
+    </style>
+    <body>
+    <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="logo">
+                    <a href="index1.php" class="nav-link">
+                        <span class="link-text">Paw Print </span>
+                        <i class="fa-solid fa-kiwi-bird fa-2xl" style="color: cyan;"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index1.php" class="nav-link">
+                        <i class="fa-solid fa-house fa-2xl" style="color: cyan;"></i>
+                        <span class="link-text">Home </span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="view_pets.php" class="nav-link">
+                        <i class="fa-solid fa-dog fa-2xl" style="color: cyan;"></i>
+                        <span class="link-text">Registered Pets</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="Shelter/shelter.php" class="nav-link">
+                        <i class="fa-solid fa-shop fa-2xl" style="color: cyan;"></i>
+                        <span class="link-text">Shelters</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="contact_us.php" class="nav-link">
+           
+                         <i class="fa-sharp fa-solid fa-envelope fa-2xl" style="color: cyan;"></i>
+                        <span class="link-text">Contact us</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="phplol.php" class="nav-link">
+           
+                         <i class="fa-sharp fa-solid fa-envelope fa-2xl" style="color: cyan;"></i>
+                        <span class="link-text">us</span>
+                    </a>
+                </li>
+                
+                <div class="sub-menus" id="subMenus">
+                        <a href="#">Logged In</a>
+                        <a href="logout.php">Logout</a>
+                    </div> 
+                <li class="nav-item" onclick="toggleSubMenus()" style="cursor: pointer;">
+                    <div class="nav-link">
+                        <i class="fa-solid fa-gear fa-2xl" style="color: cyan;"></i>
+                        <span class="link-text">User <?php echo $_SESSION['username']; ?></span>
+                    </div>           
+                </li>>
+            </ul>
+        </nav>
+        
+
+            <?php  if (isset($_SESSION['username'])) : ?>
+                <h1 style="text-align:center;">Welcome  <?php echo $_SESSION['username']; ?></h1>
+            <?php endif ?>
+            <div class="slideshow-container">
+            <?php
+            // Array of pet images (replace these with actual image paths)
+            $petImages = [
+                "Images/dog1.jpg",
+                "Images/dog3.jpg",
+                "Images/dog4.jpg",
+                // Add more image paths as needed
+            ];
+            foreach ($petImages as $imagePath) {
+                echo '<div class="slide">';
+                echo '<img src="' . $imagePath . '" alt="Pet">';
+                echo '</div>';
+            }
+            ?>
+            </div>
+            <main>
+            <p style="margin-left:14rem; margin-right:2in; font-size: x-large; font-family: 'Comic Sans MS', cursive, sans-serif; ;">
+                Pets bring joy, companionship, and an abundance of love to our lives. Whether it's a loyal dog, a graceful cat, a colorful fish, or a chirpy bird, pets have a unique way of brightening our days and making our homes feel complete.
+
+One of the remarkable aspects of having a pet is the unwavering bond that forms between humans and animals. Pets have an incredible ability to understand and respond to our emotions, offering comfort during difficult times and celebrating with us during moments of happiness. They have an innate sense of empathy, often sensing when we need their presence the most. Just a gentle nuzzle or a warm cuddle from a furry friend can instantly uplift our spirits and make us feel cherished.
+
+Pets also teach us valuable life lessons. They remind us to live in the present moment, finding joy in the simplest things like a game of fetch or a peaceful nap in the sun. They teach us about responsibility as we care for their needs, providing food, shelter, and medical attention. They encourage us to be patient, as we train them, understanding that it takes time and consistency to help them learn and grow. In return, pets reward us with unwavering loyalty, unconditional love, and the opportunity to experience the purest form of companionship.
+
+Beyond their emotional and psychological benefits, pets offer numerous health advantages. Studies have shown that interacting with animals can lower blood pressure, reduce stress levels, and alleviate feelings of loneliness and depression. The presence of pets can even boost our immune systems and improve our cardiovascular health. Taking care of a pet also encourages physical activity, as we engage in daily walks, play sessions, or simply spending time outdoors with our furry companions.
+
+Pets come in various shapes, sizes, and species, catering to diverse lifestyles and preferences. Each pet has its own unique personality, quirks, and individuality, which adds an element of excitement and discovery to our lives. From the mischievous antics of a playful kitten to the wise gaze of an older dog, pets have an incredible ability to leave lasting imprints on our hearts.
+
+However, it's important to remember that owning a pet is a long-term commitment. Pets rely on us for their well-being, and it is our responsibility to provide them with a safe and loving environment. Regular veterinary care, proper nutrition, exercise, and mental stimulation are crucial for their overall health and happiness.
+
+In a world where life can sometimes be stressful and unpredictable, pets offer a constant source of comfort, laughter, and unwavering affection. They teach us about compassion, responsibility, and the beauty of unconditional love. So, whether you have a fluffy companion curled up at your feet or dream of welcoming a pet into your life, the bond between humans and pets is a cherished relationship that enriches our existence in countless ways.
+  
+What is a domestic dog?
+The term “domestic dog” refers to any of several hundred breeds of dog in the world today. While these animals vary drastically in appearance, every dog—from the Chihuahua to the Great Dane—is a member of the same species, Canis familiaris. This separates domestic dogs from wild canines, such as coyotes, foxes, and wolves.
+
+Domestic dogs are mostly kept as pets, though many breeds are capable of surviving on their own, whether it’s in a forest or on city streets. A third of all households worldwide have a dog, according to a 2016 consumer insights study. This makes the domestic dog the most popular pet on the planet.
+
+Evolutionary origins
+All dogs descend from a species of wolf, but not the gray wolf (Canis lupus), like many people assume. In fact, DNA evidence suggests that the now-extinct wolf ancestor to modern dogs was Eurasian. However, scientists are still working to understand exactly what species gave rise to dogs.   
+
+When dogs broke off from their wild ancestors is also a matter of mystery, but genetics suggest that it occurred between 15,000 and 30,000 years ago.
+
+While it’s impossible to say exactly how a wild wolf species became a domesticated dog, most scientists believe the process happened gradually as wolves became more comfortable with humans. Perhaps wolves started down this path simply by eating human scraps. Many generations later, humans might have encouraged wolves to stay near by actively feeding them. Later still, those wolves may have been welcomed into the human home and eventually bred to encourage certain traits. All of this is thought to have unfolded over thousands of years.
+
+</p>
+        </main>
+        <script src="menu.js"></script>
+        <script src="slide.js"></script>
+    </body>
+</html>

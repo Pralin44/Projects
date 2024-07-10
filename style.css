@@ -1,0 +1,277 @@
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+
+}
+body{
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+body::-webkit-scrollbar{
+    width: 0.4rem;
+}
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb{
+    background: #6649b8;
+}
+
+main{
+    margin-left: 5rem;
+    padding: 1rem;
+}
+img {
+    height: 500px; width:400px;
+}
+.navbar{
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: 200ms ease;
+}
+.navbar-nav{
+    list-style: none; 
+    padding: 0;  
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+.nav-item{
+    
+    line-height: 70px;
+    width: 100%;
+    cursor: pointer;
+    
+}
+.nav-item:last-child{
+    margin-top: auto;
+}
+.nav-link{
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+}
+.nav-link:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+}
+.link-text{
+    display: none;
+    margin-left: 1rem;
+}
+.nav-item .fa-solid{
+    min-width: 2rem;
+    margin: 0 1.5rem;
+}
+.navbar:hover{    
+    width: 16rem;
+}
+.navbar:hover .link-text {
+    display: block;
+
+}
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;;
+    text-align: center;
+    color: var(--text-secondary);
+    letter-spacing: 0.3ch;
+    width: 100%;
+    
+}
+.logo .fa-solid {
+    min-width: 2rem;
+    margin: 0 1.5rem;
+   transform: rotate(0deg); 
+   transition: transform var(--transition-speed);
+}
+
+.navbar:hover .logo .fa-solid {
+    transform: rotate(650deg);
+    transition: 500ms;
+}
+#contacted {
+    margin-top: 2in;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#contacted td, #customer th {
+    border: 1px solid #ddd;
+    padding: 14px;
+}
+
+#contacted tr:nth-child(even){background-color: white;}
+
+#contacted tr:hover {background-color: #ddd;}
+
+#contacted th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: black;
+  filter: grayscale(0%) opacity(0.9);
+  color: var(--text-primary);
+}
+
+#contacted th:hover {
+    filter: grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color: cyan;
+}
+
+
+  
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 16rem;
+    margin-right: 2in;
+    justify-content: flex-start;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 9px; 
+    background-color: #3f4141;
+    height: auto;
+}
+
+.card {
+    background-color: rgb(12, 172, 154);
+    box-shadow: 0 0 12px rgb(63, 63, 63);
+    height: 550px;
+    width:400px;
+    margin: 120px;
+    }
+
+.intro h4 {
+    
+    font-size: 30px;
+}
+.intro p{
+    visibility: hidden;
+    opacity: 0;
+    font-size: 20;
+}
+.intro {
+    height: 100px;
+    width: 400px;
+    box-sizing: border-box;
+    padding: 10px;
+    background: black;
+    color: white;
+    position:relative;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .intro{
+    height: 230px;
+    bottom: 130px;
+    background: rgb(8, 164, 164);
+}
+.card:hover p{
+    opacity: 1;
+    visibility: visible;
+}
+
+.container1 {
+    height: 17rem;
+    border-left: 17 rem;
+    border-right: 2in;
+    padding-left: 17rem;
+    padding-right: 2rem;
+    border-left-width: 17rem;
+    background-color: aqua;
+}
+
+form, .content {
+	width: 30%;
+	margin: 0px auto;
+	padding: 20px;
+	border: 1px solid #B0C4DE;
+	background: white;
+	border-radius: 0px 0px 10px 10px;
+}
+
+.input-group {
+	margin: 10px 10px 10px 10px;
+}
+
+.input-group label {
+	display: block;
+	text-align: left;
+	margin: 5px;
+	font-size: 20px;
+}
+.input-group input {
+	height: 32px;
+	width: 95%;
+	padding: 5px 10px;
+	font-size: 15px;
+	border-radius: 10px;
+	border: 1px solid gray;
+}
+.btn {
+	cursor: pointer;
+	padding: 12px;
+	font-size: 16px;
+	color: white;
+	background: black;
+	border: none;
+	border-radius: 10px;
+    filter: grayscale(0%) opacity(0.9);
+    color: var(--text-primary);
+}
+
+.btn:hover{
+    filter: grayscale(0%) opacity(1);
+    color:cyan;
+}
+.header {
+	width: 30%;
+	margin: 50px auto 0px;
+	color: white;
+	background: black;
+	text-align: center;
+	border: 1px solid #B0C4DE;
+	border-bottom: none;
+	border-radius: 10px 10px 0px 0px;
+	padding: 20px;
+}
+
+.r1 {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    background-color: #3f4141;
+}
+/* regtister pets section */
+.register_name{
+    color: #6649b8;
+}
+.registerForm{
+    height: 100vh;
+    width: 100vh;
+    background-color: #6649b8;
+
+}
